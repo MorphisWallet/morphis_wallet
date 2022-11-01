@@ -5,9 +5,11 @@
 # Prerequisite
 `macOS` *unknown compatibility on other OS*
 
-`node >= 16.0.0` *unknown compataty for earlier versions*.
+`node >= 14.8.0 >= 16` *vite does NOT support other versions*.
 
 `pnpm >= 7.3.0 <8` *pnpm is a must because project employs pnpm monorepo*
+
+`nvm` *recommended*
 
 # UI Prototype Desgin
 https://www.figma.com/file/0ZdejUNI8xNDqKDDqSm44O/Sui-Wallet-Final?node-id=0%3A1
