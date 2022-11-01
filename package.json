@@ -1,0 +1,24 @@
+{
+  "name": "morphis_wallet",
+  "version": "1.0.0",
+  "description": "<img width=\"324\" alt=\"image\" src=\"https://user-images.githubusercontent.com/22234622/199186970-459a18ee-bf9a-4381-b763-b2ecd0017ce9.png\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChiuMungZitAlexander/morphis_wallet.git"
+  },
+  "keywords": [
+    "sui",
+    "wallet",
+    "morphis"
+  ],
+  "author": "Alexander Zhao, contek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ChiuMungZitAlexander/morphis_wallet/issues"
+  },
+  "homepage": "https://github.com/ChiuMungZitAlexander/morphis_wallet#readme"
+}
