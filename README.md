@@ -1,6 +1,12 @@
 # Morphis Wallet
+<br />
+<p align="center">
+<img width="155" alt="image" src="https://user-images.githubusercontent.com/22234622/199383011-c5da6ef3-c00c-4176-a4c9-c19b2e32031f.png">
+</p>
+<p align="center">
+<img width="286" alt="image" src="https://user-images.githubusercontent.com/22234622/199383086-554774c7-5754-4b78-b4f1-e68273d3d02c.png">
+</p>
 
-<img width="324" alt="image" src="https://user-images.githubusercontent.com/22234622/199186970-459a18ee-bf9a-4381-b763-b2ecd0017ce9.png">
 
 # Prerequisite
 `macOS` *unknown compatibility on other OS*
