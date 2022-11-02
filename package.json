@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "prepare": "husky install",
-    "morphis:dev": "pnpm --filter @morphis/morphis dev"
+    "morphis:dev": "pnpm --filter @morphis/morphis dev",
+    "lint": "eslint"
   },
   "repository": {
     "type": "git",

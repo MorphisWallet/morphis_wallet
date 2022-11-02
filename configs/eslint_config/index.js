@@ -8,7 +8,7 @@ module.exports = defineConfig({
   },
   extends: [
     'eslint:recommended',
-    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:jsonc/recommended-with-jsonc',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
