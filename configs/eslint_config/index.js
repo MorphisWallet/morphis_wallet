@@ -49,7 +49,7 @@ module.exports = defineConfig({
       },
       rules: {
         'no-undef': 'off',
-        'react/react-in-jsx-scope': 'off',
+        'react/react-in-jsx-scope': 'off', // only for React >= 16.8
       },
     },
   ],

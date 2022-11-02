@@ -7,7 +7,8 @@
     "packages/*"
   ],
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "morphis:dev": "pnpm --filter @morphis/morphis dev"
   },
   "repository": {
     "type": "git",
