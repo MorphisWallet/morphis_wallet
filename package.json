@@ -9,7 +9,7 @@
   "scripts": {
     "prepare": "husky install",
     "morphis:dev": "pnpm --filter @morphis/morphis dev",
-    "lint": "eslint"
+    "lint": "npx eslint --ext .js,.jsx,.ts,.tsx ."
   },
   "repository": {
     "type": "git",
