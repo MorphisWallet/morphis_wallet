@@ -1,6 +1,4 @@
-import { Button as MuiButton, ButtonProps } from '@mui/material'
-
-import './button.less'
+import MuiButton, { ButtonProps } from '@mui/material/Button'
 
 export default function Button({ sx, ...restProps }: ButtonProps) {
   return (
@@ -9,6 +7,7 @@ export default function Button({ sx, ...restProps }: ButtonProps) {
       disableElevation
       sx={{
         borderRadius: 20,
+        fontSize: '0.875rem',
         height: '40px',
         textTransform: 'none',
         width: '100%',
