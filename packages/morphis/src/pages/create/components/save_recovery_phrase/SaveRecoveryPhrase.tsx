@@ -26,7 +26,7 @@ export function SaveRecoveryPhrase({ onNext }: CreateStepProps) {
         .map(() =>
           Math.random()
             .toString(36)
-            .slice(2, Math.floor(Math.random() * 4 + 6))
+            .slice(2, Math.floor(Math.random() * 7 + 5))
         )
     )
   }
@@ -76,7 +76,19 @@ export function SaveRecoveryPhrase({ onNext }: CreateStepProps) {
           {phrases.map((ph, i) => (
             <div className={st.phWrapper} key={ph}>
               <span className={st.phIndex}>{`${i + 1}`.padStart(2, '0')}</span>
-              <Tooltip title={ph}>
+              <Tooltip
+                PopperProps={{
+                  modifiers: [
+                    {
+                      name: 'offset',
+                      options: {
+                        offset: [0, -14],
+                      },
+                    },
+                  ],
+                }}
+                title={ph}
+              >
                 <span className={st.ph}>{ph}</span>
               </Tooltip>
             </div>
