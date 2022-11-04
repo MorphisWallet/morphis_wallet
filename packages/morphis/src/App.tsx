@@ -1,8 +1,7 @@
 import { IntlProvider } from 'react-intl'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider, Navigate } from 'react-router-dom'
 import { ThemeProvider, createTheme } from '@mui/material/styles'
 
-import { Welcome } from '@pages/welcome'
 import { Create } from '@pages/create'
 
 import './App.less'
@@ -16,15 +15,12 @@ const theme = createTheme({
       main: '#fff',
     },
   },
-  typography: {
-    fontFamily: 'satoshi',
-  },
 })
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Welcome />,
+    element: <Navigate to="/create" />,
   },
   {
     path: 'create',
