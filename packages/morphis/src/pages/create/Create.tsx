@@ -1,98 +1,27 @@
-import { useState, lazy } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Layout } from '@pages/ layout'
+import { Button } from '@components/Button'
 
-import IconButton from '@mui/material/IconButton'
-import MobileStepper from '@mui/material/MobileStepper'
-import { Layout } from '@pages/layout'
-
-import ArrowShort from '@assets/arrow_short.svg'
+import Logo from '@assets/logo.svg'
 
 import st from './Create.module.less'
 
-enum StepKeys {
-  CREATE_PASSWORD = 'CREATE_PASSWORD',
-  SAVE_RECOVERY_PHRASE = 'SAVE_RECOVERY_PHRASE',
-  CONFIRM_RECOVERY_PHRASE = 'CONFIRM_RECOVERY_PHRASE',
-}
-
-const CreatePassword = lazy(() =>
-  import('./components/create_password').then((module) => ({
-    default: module.CreatePassword,
-  }))
-)
-const SaveRecoveryPhrase = lazy(() =>
-  import('./components/save_recovery_phrase').then((module) => ({
-    default: module.SaveRecoveryPhrase,
-  }))
-)
-
-const STEPS: StepKeys[] = [
-  StepKeys.CREATE_PASSWORD,
-  StepKeys.SAVE_RECOVERY_PHRASE,
-  StepKeys.CONFIRM_RECOVERY_PHRASE,
-]
-
 export function Create() {
-  const navigate = useNavigate()
-
-  const [currentStep, setCurrentStep] = useState<StepKeys>(
-    StepKeys.CREATE_PASSWORD
-  )
-
-  function onBack() {
-    const activeStepIndex = STEPS.indexOf(currentStep)
-
-    if (activeStepIndex < 1) {
-      navigate('/')
-      return
-    }
-
-    setCurrentStep(STEPS[activeStepIndex - 1])
-  }
-
-  function renderContent() {
-    switch (currentStep) {
-      case StepKeys.CREATE_PASSWORD:
-        return (
-          <CreatePassword
-            onNext={() => setCurrentStep(StepKeys.SAVE_RECOVERY_PHRASE)}
-          />
-        )
-      case StepKeys.SAVE_RECOVERY_PHRASE:
-        return (
-          <SaveRecoveryPhrase
-            onNext={() => setCurrentStep(StepKeys.CONFIRM_RECOVERY_PHRASE)}
-          />
-        )
-    }
-  }
-
   return (
     <Layout>
       <div className={st.create}>
-        <nav className={st.nav}>
-          <IconButton
-            aria-label="back"
-            onClick={onBack}
-            sx={{ left: '-8px', position: 'absolute', top: '22px' }}
-          >
-            <img
-              alt="back arrow"
-              className={st.backButtonSVG}
-              src={ArrowShort}
-            />
-          </IconButton>
-          <MobileStepper
-            activeStep={STEPS.indexOf(currentStep)}
-            backButton={null}
-            nextButton={null}
-            position="static"
-            steps={3}
-            sx={{ display: 'flex', justifyContent: 'center' }}
-            variant="dots"
-          />
-        </nav>
-        {renderContent()}
+        <img alt="logo" className={st.logo} src={Logo} />
+        <p className={st.logoText}>Morphis</p>
+        <p className={st.desc}>
+          A friendly crypto wallet for your web3 journey
+        </p>
+        <Button
+          color="primary"
+          sx={{ marginBottom: '16px' }}
+          variant="contained"
+        >
+          Create a new wallet
+        </Button>
+        <Button variant="outlined">I already have a wallet</Button>
       </div>
     </Layout>
   )
