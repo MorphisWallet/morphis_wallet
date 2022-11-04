@@ -4,12 +4,13 @@ import { BrowserTracing } from '@sentry/tracing'
 import packageJson from '../package.json'
 
 const WALLET_VERSION = JSON.stringify(packageJson.version)
-const IS_PROD = process.env.NODE_ENV === 'production'
+const IS_PROD = import.meta.env.PROD
 
 export default function initSentry() {
-  if (!IS_PROD) return
-
-  const SENTRY_DSN = process.env.SENTRY_DSN;
+  if (!IS_PROD) {
+    return
+  }
+  const SENTRY_DSN = import.meta.env.VITE_SENTRY_DSN
 
   if (!SENTRY_DSN) {
     console.warn('No sentry dsn from environment variables')
