@@ -1,7 +1,8 @@
+import { forwardRef, ForwardedRef } from 'react'
 import MuiButton, { ButtonProps } from '@mui/material/Button'
 
-export default function Button({ sx, ...restProps }: ButtonProps) {
-  return (
+export const Button = forwardRef(
+  ({ sx, ...restProps }: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => (
     <MuiButton
       className="morphis-button"
       disableElevation
@@ -13,7 +14,10 @@ export default function Button({ sx, ...restProps }: ButtonProps) {
         width: '100%',
         ...sx,
       }}
+      ref={ref}
       {...restProps}
     />
   )
-}
+)
+
+Button.displayName = 'Button'
