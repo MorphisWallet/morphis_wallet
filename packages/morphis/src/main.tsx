@@ -1,7 +1,8 @@
-import { StrictMode } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import App from './App'
+import ErrorBoundary from './ErrorBoundary'
 
 import initSentry from './sentry'
 
@@ -14,7 +15,11 @@ function renderApp() {
   const root = createRoot(rootDom)
   root.render(
     <StrictMode>
-      <App />
+      <ErrorBoundary>
+        <Suspense fallback={<div>loading</div>}>
+          <App />
+        </Suspense>
+      </ErrorBoundary>
     </StrictMode>
   )
 }
