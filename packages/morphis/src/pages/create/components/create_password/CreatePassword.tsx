@@ -79,6 +79,7 @@ export const CreatePassword = ({ onNext }: CreateStepProps) => {
           <Checkbox
             checked={values.agreeTOS}
             color="primary"
+            disableRipple
             id="agreeTOS"
             inputProps={{ 'aria-label': 'terms of service checkbox' }}
             name="agreeTOS"
