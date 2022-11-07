@@ -14,12 +14,12 @@ import type { CreateStepProps } from '@pages/create/types'
 
 const MOCK_PHRASE_LENGTH = 12
 
-export function SaveRecoveryPhrase({ onNext }: CreateStepProps) {
+export const SaveRecoveryPhrase = ({ onNext }: CreateStepProps) => {
   const [phrases, setPhrases] = useState<string[]>([])
   const [copyToastOpen, setCopyToastOpen] = useState(false)
   const [copyErrorOpen, setCopyErrorOpen] = useState(false)
 
-  function onLoadRecoveryPhrase() {
+  const onLoadRecoveryPhrase = () => {
     setPhrases(
       Array(MOCK_PHRASE_LENGTH)
         .fill(undefined)
@@ -31,7 +31,7 @@ export function SaveRecoveryPhrase({ onNext }: CreateStepProps) {
     )
   }
 
-  async function onCopy() {
+  const onCopy = async () => {
     try {
       if (navigator?.clipboard) {
         await navigator.clipboard.writeText(phrases.join(' '))
@@ -48,7 +48,7 @@ export function SaveRecoveryPhrase({ onNext }: CreateStepProps) {
     }
   }
 
-  function onMouseLeaveCopyButton() {
+  const onMouseLeaveCopyButton = () => {
     setCopyToastOpen(false)
   }
 
@@ -57,7 +57,7 @@ export function SaveRecoveryPhrase({ onNext }: CreateStepProps) {
   }, [])
 
   return (
-    <div className={st.container}>
+    <div className={commonSt.container}>
       <Snackbar
         anchorOrigin={{ horizontal: 'center', vertical: 'top' }}
         open={copyErrorOpen}

@@ -1,11 +1,8 @@
 import { useState, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import IconButton from '@mui/material/IconButton'
-import MobileStepper from '@mui/material/MobileStepper'
-import { Layout } from '@pages/layout'
-
-import ArrowShort from '@assets/arrow_short.svg'
+import { LayoutLogin } from '@pages/layout/layout_login'
+import { StepperHeader } from './components/stepper_header/StepperHeader'
 
 import st from './Create.module.less'
 
@@ -25,6 +22,11 @@ const SaveRecoveryPhrase = lazy(() =>
     default: module.SaveRecoveryPhrase,
   }))
 )
+const ConfirmRecoveryPhrase = lazy(() =>
+  import('./components/confirm_recovery_phrase').then((module) => ({
+    default: module.ConfirmRecoveryPhrase,
+  }))
+)
 
 const STEPS: StepKeys[] = [
   StepKeys.CREATE_PASSWORD,
@@ -32,14 +34,14 @@ const STEPS: StepKeys[] = [
   StepKeys.CONFIRM_RECOVERY_PHRASE,
 ]
 
-export function Create() {
+export const Create = () => {
   const navigate = useNavigate()
 
   const [currentStep, setCurrentStep] = useState<StepKeys>(
     StepKeys.CREATE_PASSWORD
   )
 
-  function onBack() {
+  const onBack = () => {
     const activeStepIndex = STEPS.indexOf(currentStep)
 
     if (activeStepIndex < 1) {
@@ -50,7 +52,7 @@ export function Create() {
     setCurrentStep(STEPS[activeStepIndex - 1])
   }
 
-  function renderContent() {
+  const renderContent = () => {
     switch (currentStep) {
       case StepKeys.CREATE_PASSWORD:
         return (
@@ -64,36 +66,27 @@ export function Create() {
             onNext={() => setCurrentStep(StepKeys.CONFIRM_RECOVERY_PHRASE)}
           />
         )
+      case StepKeys.CONFIRM_RECOVERY_PHRASE:
+        return (
+          <ConfirmRecoveryPhrase
+            onNext={() => navigate('/create/done', { replace: true })}
+          />
+        )
+      default:
+        return null
     }
   }
 
   return (
-    <Layout>
-      <div className={st.create}>
-        <nav className={st.nav}>
-          <IconButton
-            aria-label="back"
-            onClick={onBack}
-            sx={{ left: '-8px', position: 'absolute', top: '22px' }}
-          >
-            <img
-              alt="back arrow"
-              className={st.backButtonSVG}
-              src={ArrowShort}
-            />
-          </IconButton>
-          <MobileStepper
-            activeStep={STEPS.indexOf(currentStep)}
-            backButton={null}
-            nextButton={null}
-            position="static"
-            steps={3}
-            sx={{ display: 'flex', justifyContent: 'center' }}
-            variant="dots"
-          />
-        </nav>
-        {renderContent()}
-      </div>
-    </Layout>
+    <LayoutLogin
+      header={
+        <StepperHeader
+          activeStep={STEPS.indexOf(currentStep)}
+          onBack={onBack}
+        />
+      }
+    >
+      {renderContent()}
+    </LayoutLogin>
   )
 }

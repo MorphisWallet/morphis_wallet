@@ -6,7 +6,7 @@ import ErrorBoundary from './ErrorBoundary'
 
 import initSentry from './sentry'
 
-function renderApp() {
+const renderApp = () => {
   const rootDom = document.getElementById('root')
   if (!rootDom) {
     throw new Error('Root element not found')

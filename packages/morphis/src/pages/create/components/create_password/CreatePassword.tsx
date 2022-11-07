@@ -1,5 +1,5 @@
 import { useFormik } from 'formik'
-import * as Yup from 'yup'
+import * as yup from 'yup'
 import cl from 'classnames'
 
 import FormGroup from '@mui/material/FormGroup'
@@ -16,23 +16,23 @@ import st from './CreatePassword.module.less'
 
 const PASSWORD_MIN_LENGTH = 8
 
-const SCHEMA = Yup.object().shape({
-  password: Yup.string()
+const SCHEMA = yup.object().shape({
+  password: yup.string()
     .required('This field is required')
     .min(PASSWORD_MIN_LENGTH),
-  confirmPassword: Yup.string().when('password', {
+  confirmPassword: yup.string().when('password', {
     is: (val: string | undefined) => (val && val.length > 0 ? true : false),
-    then: Yup.string().oneOf(
-      [Yup.ref('password')],
+    then: yup.string().oneOf(
+      [yup.ref('password')],
       'Both passwords need to be the same'
     ),
   }),
-  agreeTOS: Yup.bool()
+  agreeTOS: yup.bool()
     .required()
     .oneOf([true], 'The Terms of Service must be accepted'),
 })
 
-export function CreatePassword({ onNext }: CreateStepProps) {
+export const CreatePassword = ({ onNext }: CreateStepProps) => {
   const { values, touched, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
       password: '',
@@ -79,6 +79,7 @@ export function CreatePassword({ onNext }: CreateStepProps) {
           <Checkbox
             checked={values.agreeTOS}
             color="primary"
+            disableRipple
             id="agreeTOS"
             inputProps={{ 'aria-label': 'terms of service checkbox' }}
             name="agreeTOS"

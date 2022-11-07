@@ -4,6 +4,8 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 
 import { Welcome } from '@pages/welcome'
 import { Create } from '@pages/create'
+import { Done } from '@pages/create/pages/done'
+import { Unlock } from '@pages/unlock'
 
 import './App.less'
 
@@ -30,14 +32,22 @@ const router = createBrowserRouter([
     path: 'create',
     element: <Create />,
   },
+  {
+    path: 'create/done',
+    element: <Done />,
+  },
+  {
+    path: 'unlock',
+    element: <Unlock />,
+  },
 ])
 
-export default function App() {
-  return (
-    <IntlProvider locale="en">
-      <ThemeProvider theme={theme}>
-        <RouterProvider router={router} fallbackElement={<div>loading</div>} />
-      </ThemeProvider>
-    </IntlProvider>
-  )
-}
+const App = () => (
+  <IntlProvider locale="en">
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} fallbackElement={<div>loading</div>} />
+    </ThemeProvider>
+  </IntlProvider>
+)
+
+export default App
