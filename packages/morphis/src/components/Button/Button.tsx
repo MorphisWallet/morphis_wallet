@@ -8,7 +8,7 @@ export const Button = forwardRef(
       disableElevation
       sx={{
         borderRadius: 20,
-        fontSize: '0.875rem',
+        fontSize: '14px',
         height: '40px',
         textTransform: 'none',
         width: '100%',
