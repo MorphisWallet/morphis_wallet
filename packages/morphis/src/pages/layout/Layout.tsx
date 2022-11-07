@@ -8,6 +8,6 @@ type LayoutProps = {
   className?: string
 }
 
-export function Layout({ children, className }: LayoutProps) {
-  return <div className={cln([st.layout, className])}>{children}</div>
-}
+export const Layout = ({ children, className }: LayoutProps) => (
+  <div className={cln([st.layout, className])}>{children}</div>
+)

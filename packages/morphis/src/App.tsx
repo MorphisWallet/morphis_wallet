@@ -32,12 +32,12 @@ const router = createBrowserRouter([
   },
 ])
 
-export default function App() {
-  return (
-    <IntlProvider locale="en">
-      <ThemeProvider theme={theme}>
-        <RouterProvider router={router} fallbackElement={<div>loading</div>} />
-      </ThemeProvider>
-    </IntlProvider>
-  )
-}
+const App = () => (
+  <IntlProvider locale="en">
+    <ThemeProvider theme={theme}>
+      <RouterProvider router={router} fallbackElement={<div>loading</div>} />
+    </ThemeProvider>
+  </IntlProvider>
+)
+
+export default App

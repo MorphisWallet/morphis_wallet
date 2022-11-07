@@ -32,14 +32,14 @@ const STEPS: StepKeys[] = [
   StepKeys.CONFIRM_RECOVERY_PHRASE,
 ]
 
-export function Create() {
+export const Create = () => {
   const navigate = useNavigate()
 
   const [currentStep, setCurrentStep] = useState<StepKeys>(
     StepKeys.CREATE_PASSWORD
   )
 
-  function onBack() {
+  const onBack = () => {
     const activeStepIndex = STEPS.indexOf(currentStep)
 
     if (activeStepIndex < 1) {
@@ -50,7 +50,7 @@ export function Create() {
     setCurrentStep(STEPS[activeStepIndex - 1])
   }
 
-  function renderContent() {
+  const renderContent = () => {
     switch (currentStep) {
       case StepKeys.CREATE_PASSWORD:
         return (

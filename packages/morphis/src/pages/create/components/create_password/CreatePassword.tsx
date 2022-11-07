@@ -32,7 +32,7 @@ const SCHEMA = Yup.object().shape({
     .oneOf([true], 'The Terms of Service must be accepted'),
 })
 
-export function CreatePassword({ onNext }: CreateStepProps) {
+export const CreatePassword = ({ onNext }: CreateStepProps) => {
   const { values, touched, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
       password: '',
