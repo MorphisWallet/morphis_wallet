@@ -10,7 +10,7 @@ import st from './Done.module.less'
 export const Done = () => (
   <LayoutLogin
     footer={
-      <Link className={st.buttonLink} to="/">
+      <Link to="/">
         <Button fullWidth variant="outlined">
           Finish
         </Button>

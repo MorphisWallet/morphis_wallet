@@ -12,7 +12,7 @@ export const Welcome = () => (
     <img alt="logo" className={st.logo} src={Logo} />
     <p className={st.logoText}>Morphis</p>
     <p className={st.desc}>A friendly crypto wallet for your web3 journey</p>
-    <Link className={st.buttonLink} to="/create">
+    <Link to="/create">
       <Button
         color="primary"
         fullWidth
@@ -22,7 +22,7 @@ export const Welcome = () => (
         Create a new wallet
       </Button>
     </Link>
-    <Link className={st.buttonLink} to="/login">
+    <Link to="/unlock">
       <Button fullWidth variant="outlined">
         I already have a wallet
       </Button>

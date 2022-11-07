@@ -5,6 +5,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles'
 import { Welcome } from '@pages/welcome'
 import { Create } from '@pages/create'
 import { Done } from '@pages/create/pages/done'
+import { Unlock } from '@pages/unlock'
 
 import './App.less'
 
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
   {
     path: 'create/done',
     element: <Done />,
+  },
+  {
+    path: 'unlock',
+    element: <Unlock />,
   },
 ])
 
