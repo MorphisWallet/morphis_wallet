@@ -12,6 +12,10 @@ import st from './Unlock.module.less'
 export const Unlock = () => {
   const [password, setPassword] = useState<string>('')
 
+  const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+  }
+
   const onUnlock = () => {
     if (!password) return
   }
@@ -27,9 +31,7 @@ export const Unlock = () => {
       <img alt="logo" className={st.logo} src={Logo} />
       <p className={st.logoText}>Welcome back!</p>
       <Input
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-          setPassword(e.target.value)
-        }}
+        onChange={onChange}
         placeholder="Password"
         sx={{ marginBottom: '16px' }}
         type="password"
