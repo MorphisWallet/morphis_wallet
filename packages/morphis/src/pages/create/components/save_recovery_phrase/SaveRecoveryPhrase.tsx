@@ -57,7 +57,7 @@ export const SaveRecoveryPhrase = ({ onNext }: CreateStepProps) => {
   }, [])
 
   return (
-    <div className={st.container}>
+    <div className={commonSt.container}>
       <Snackbar
         anchorOrigin={{ horizontal: 'center', vertical: 'top' }}
         open={copyErrorOpen}
