@@ -4,8 +4,7 @@ import { Link } from 'react-router-dom'
 import { LayoutLogin } from '@layouts/layout_login'
 import { Input } from '@components/input'
 import { Button } from '@components/button'
-
-import Logo from '@assets/logo.svg'
+import { Logo } from '@components/logo'
 
 import st from './unlock.module.less'
 
@@ -28,7 +27,7 @@ export const Unlock = () => {
         </Link>
       }
     >
-      <img alt="logo" className={st.logo} src={Logo} />
+      <Logo className={st.logo} />
       <p className={st.logoText}>Welcome back!</p>
       <Input
         onChange={onChange}

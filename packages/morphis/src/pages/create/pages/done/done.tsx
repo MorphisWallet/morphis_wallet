@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 import MuiLink from '@mui/material/Link'
 import { LayoutLogin } from '@layouts/layout_login'
 import { Button } from '@components/button'
+import { Logo } from '@components/logo'
 
-import Logo from '@assets/logo.svg'
 import Twitter from '@assets/twitter.svg'
 import Discord from '@assets/discord.svg'
 
@@ -20,7 +20,7 @@ export const Done = () => (
       </Link>
     }
   >
-    <img alt="logo" className={st.logo} src={Logo} />
+    <Logo className={st.logo} />
     <p className={st.logoText}>You are all done!</p>
     <p className={st.desc}>
       Follow us to get the latest offers and product updates!

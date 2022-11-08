@@ -2,14 +2,13 @@ import { Link } from 'react-router-dom'
 
 import { LayoutLogin } from '@layouts/layout_login'
 import { Button } from '@components/button'
-
-import Logo from '@assets/logo.svg'
+import { Logo } from '@components/logo'
 
 import st from './welcome.module.less'
 
 export const Welcome = () => (
   <LayoutLogin>
-    <img alt="logo" className={st.logo} src={Logo} />
+    <Logo className={st.logo} />
     <p className={st.logoText}>Morphis</p>
     <p className={st.desc}>A friendly crypto wallet for your web3 journey</p>
     <Link to="/create">
