@@ -9,6 +9,7 @@ export default defineConfig({
       '@components': resolve(__dirname, '/src/components'),
       '@assets': resolve(__dirname, '/src/assets'),
       '@pages': resolve(__dirname, '/src/pages'),
+      '@layouts': resolve(__dirname, '/src/layouts'),
     },
   },
   plugins: [react()],

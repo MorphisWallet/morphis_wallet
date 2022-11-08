@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { LayoutLogin } from '@pages/layout/layout_login'
+import { LayoutLogin } from '@layouts/layout_login'
 import { Input } from '@components/input'
 import { Button } from '@components/button'
 

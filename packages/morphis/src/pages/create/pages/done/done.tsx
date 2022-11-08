@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 import MuiLink from '@mui/material/Link'
-import { LayoutLogin } from '@pages/layout/layout_login'
+import { LayoutLogin } from '@layouts/layout_login'
 import { Button } from '@components/button'
 
 import Logo from '@assets/logo.svg'

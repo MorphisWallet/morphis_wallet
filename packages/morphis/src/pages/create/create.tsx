@@ -1,7 +1,7 @@
 import { useState, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-import { LayoutLogin } from '@pages/layout/layout_login'
+import { LayoutLogin } from '@layouts/layout_login'
 import { StepperHeader } from './components/stepper_header/stepper_header'
 
 enum StepKeys {
