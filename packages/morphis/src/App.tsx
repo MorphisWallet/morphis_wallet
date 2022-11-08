@@ -6,6 +6,10 @@ import { Welcome } from '@pages/welcome'
 import { Create } from '@pages/create'
 import { Done } from '@pages/create/pages/done'
 import { Unlock } from '@pages/unlock'
+import { Landing } from '@pages/landing'
+import { Settings } from '@pages/settings'
+
+import { Loading } from '@components/loading'
 
 import './App.less'
 
@@ -40,12 +44,20 @@ const router = createBrowserRouter([
     path: 'unlock',
     element: <Unlock />,
   },
+  {
+    path: 'landing',
+    element: <Landing />,
+  },
+  {
+    path: 'settings',
+    element: <Settings />,
+  },
 ])
 
 const App = () => (
   <IntlProvider locale="en">
     <ThemeProvider theme={theme}>
-      <RouterProvider router={router} fallbackElement={<div>loading</div>} />
+      <RouterProvider router={router} fallbackElement={<Loading />} />
     </ThemeProvider>
   </IntlProvider>
 )
