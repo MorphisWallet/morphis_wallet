@@ -25,9 +25,11 @@ export const LayoutMain = ({
         <Logo className={st.logo} height={24} width={24} />
         <div className={st.account}>
           <span>test_account</span>
-          <span>(0x12348888888eeee)</span>
+          <span className={st.address}>(0x12348888888eeee)</span>
         </div>
-        <div className={st.env}>Devnet</div>
+        <div className={st.env}>
+          <span className={st.envText}>Devnet</span>
+        </div>
       </header>
       {children}
       {showBottomMenu && <BottomMenu activeMenu={activeMenu} />}
