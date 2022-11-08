@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { LayoutLogin } from '@pages/layout/layout_login'
-import { Input } from '@components/Input'
-import { Button } from '@components/Button'
+import { Input } from '@components/input1'
+import { Button } from '@components/button1'
 
 import Logo from '@assets/logo.svg'
 
-import st from './Unlock.module.less'
+import st from './unlock1.module.less'
 
 export const Unlock = () => {
   const [password, setPassword] = useState<string>('')

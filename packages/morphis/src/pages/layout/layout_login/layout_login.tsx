@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import cl from 'classnames'
 
-import st from './LayoutLogin.module.less'
+import st from './layout_login.module.less'
 
 type LayoutLoginProps = {
   header?: ReactNode | ReactNode[]

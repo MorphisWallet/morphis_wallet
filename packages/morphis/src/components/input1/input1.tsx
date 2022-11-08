@@ -2,12 +2,12 @@ import cl from 'classnames'
 
 import TextField, { TextFieldProps } from '@mui/material/TextField'
 
-import './Input.less'
+import st from './input1.module.less'
 
 export function Input({ className, sx, ...restProps }: TextFieldProps) {
   return (
     <TextField
-      className={cl(['morphis-input', className])}
+      className={cl([st.morphisInput, className])}
       fullWidth
       hiddenLabel
       size="small"

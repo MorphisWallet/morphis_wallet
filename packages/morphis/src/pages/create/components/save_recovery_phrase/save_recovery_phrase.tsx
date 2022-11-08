@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react'
 import Tooltip from '@mui/material/Tooltip'
 import Snackbar from '@mui/material/Snackbar'
 import Alert from '@mui/material/Alert'
-import { Button } from '@components/Button'
+import { Button } from '@components/button1'
 
-import commonSt from '../../Create.module.less'
-import st from './SaveRecoveryPhrase.module.less'
+import commonSt from '../../create1.module.less'
+import st from './save_recovery_phrase.module.less'
 
 import Copy from '@assets/copy.svg'
 

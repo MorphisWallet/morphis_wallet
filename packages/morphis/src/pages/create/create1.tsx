@@ -2,9 +2,7 @@ import { useState, lazy } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { LayoutLogin } from '@pages/layout/layout_login'
-import { StepperHeader } from './components/stepper_header/StepperHeader'
-
-import st from './Create.module.less'
+import { StepperHeader } from './components/stepper_header/stepper_header'
 
 enum StepKeys {
   CREATE_PASSWORD = 'CREATE_PASSWORD',

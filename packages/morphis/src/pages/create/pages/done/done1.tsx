@@ -2,13 +2,13 @@ import { Link } from 'react-router-dom'
 
 import MuiLink from '@mui/material/Link'
 import { LayoutLogin } from '@pages/layout/layout_login'
-import { Button } from '@components/Button'
+import { Button } from '@components/button1'
 
 import Logo from '@assets/logo.svg'
 import Twitter from '@assets/twitter.svg'
 import Discord from '@assets/discord.svg'
 
-import st from './Done.module.less'
+import st from './done1.module.less'
 
 export const Done = () => (
   <LayoutLogin

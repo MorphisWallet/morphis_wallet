@@ -3,7 +3,7 @@ import MobileStepper from '@mui/material/MobileStepper'
 
 import ArrowShort from '@assets/arrow_short.svg'
 
-import st from './StepperHeader.module.less'
+import st from './stepper_header.module.less'
 
 type StepperHeaderProps = {
   activeStep: number
