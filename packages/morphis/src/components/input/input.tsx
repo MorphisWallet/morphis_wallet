@@ -2,7 +2,7 @@ import cl from 'classnames'
 
 import TextField, { TextFieldProps } from '@mui/material/TextField'
 
-import st from './input1.module.less'
+import st from './input.module.less'
 
 export function Input({ className, sx, ...restProps }: TextFieldProps) {
   return (

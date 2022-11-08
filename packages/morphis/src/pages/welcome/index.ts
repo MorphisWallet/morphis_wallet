@@ -1,1 +1,1 @@
-export * from './welcome1'
+export * from './welcome'

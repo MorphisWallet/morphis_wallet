@@ -6,12 +6,12 @@ import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 import Link from '@mui/material/Link'
-import { Button } from '@components/button1'
-import { Input } from '@components/input1'
+import { Button } from '@components/button'
+import { Input } from '@components/input'
 
 import type { CreateStepProps } from '@pages/create/types'
 
-import commonSt from '../../create1.module.less'
+import commonSt from '../../create.module.less'
 import st from './create_password.module.less'
 
 const PASSWORD_MIN_LENGTH = 8

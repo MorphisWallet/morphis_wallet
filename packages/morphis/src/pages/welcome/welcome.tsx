@@ -1,11 +1,11 @@
 import { Link } from 'react-router-dom'
 
 import { LayoutLogin } from '@pages/layout/layout_login'
-import { Button } from '@components/button1'
+import { Button } from '@components/button'
 
 import Logo from '@assets/logo.svg'
 
-import st from './welcome1.module.less'
+import st from './welcome.module.less'
 
 export const Welcome = () => (
   <LayoutLogin>

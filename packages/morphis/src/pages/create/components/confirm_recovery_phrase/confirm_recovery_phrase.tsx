@@ -9,10 +9,10 @@ import {
 } from 'formik'
 import * as yup from 'yup'
 
-import { Button } from '@components/button1'
-import { Input } from '@components/input1'
+import { Button } from '@components/button'
+import { Input } from '@components/input'
 
-import commonSt from '../../create1.module.less'
+import commonSt from '../../create.module.less'
 import st from './confirm_recovery_phrase.module.less'
 
 import type { CreateStepProps } from '@pages/create/types'
