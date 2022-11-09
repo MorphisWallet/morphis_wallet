@@ -67,7 +67,7 @@ const router = createBrowserRouter([
 const App = () => (
   <IntlProvider locale="en">
     <ThemeProvider theme={theme}>
-      <RouterProvider router={router} fallbackElement={<Loading />} />
+      <RouterProvider router={router} />
     </ThemeProvider>
   </IntlProvider>
 )

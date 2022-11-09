@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 
 import App from './App'
 import ErrorBoundary from './ErrorBoundary'
+import { Loading } from '@components/loading'
 
 import initSentry from './sentry'
 
@@ -16,7 +17,7 @@ const renderApp = () => {
   root.render(
     <StrictMode>
       <ErrorBoundary>
-        <Suspense fallback={<div>loading</div>}>
+        <Suspense fallback={<Loading />}>
           <App />
         </Suspense>
       </ErrorBoundary>
