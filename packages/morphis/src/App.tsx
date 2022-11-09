@@ -7,6 +7,8 @@ import { Create } from '@pages/create'
 import { Done } from '@pages/create/pages/done'
 import { Unlock } from '@pages/unlock'
 import { Landing } from '@pages/landing'
+import { NFT } from '@pages/nft'
+import { History } from '@pages/history'
 import { Settings } from '@pages/settings'
 
 import { Loading } from '@components/loading'
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
   {
     path: 'landing',
     element: <Landing />,
+  },
+  {
+    path: 'nft',
+    element: <NFT />,
+  },
+  {
+    path: 'history',
+    element: <History />,
   },
   {
     path: 'settings',
