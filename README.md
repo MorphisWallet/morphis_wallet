@@ -17,6 +17,9 @@
 
 `nvm` *recommended*
 
+# Development Structure
+![2022-11-10-1012](https://user-images.githubusercontent.com/22234622/201091832-28e9d82f-adad-4fd7-bb92-7d2fae24621d.png)
+
 # UI Prototype Desgin
 https://www.figma.com/file/0ZdejUNI8xNDqKDDqSm44O/Sui-Wallet-Final?node-id=0%3A1
 
