@@ -12,6 +12,7 @@ export default defineConfig({
       '@assets': resolve(__dirname, '/src/assets'),
       '@pages': resolve(__dirname, '/src/pages'),
       '@layouts': resolve(__dirname, '/src/layouts'),
+      '@core': resolve(__dirname, '/src/core'),
     },
   },
   plugins: [

@@ -11,6 +11,7 @@
     "morphis:dev": "pnpm --filter @morphis/morphis dev",
     "morphis:build": "pnpm --filter @morphis/morphis build",
     "morphis:preview": "pnpm --filter @morphis/morphis preview",
+    "morphis:test": "pnpm --filter @morphis/morphis test",
     "lint": "npx eslint --ext .js,.jsx,.ts,.tsx ."
   },
   "repository": {
