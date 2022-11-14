@@ -16,7 +16,7 @@ import { isTransactionRequestResponse } from '@core/shared/messaging/messages/pa
 import Permissions from '@core/background/Permissions'
 import Tabs from '@core/background/Tabs'
 import Transactions from '@core/background/Transactions'
-import Keyring from '@core/background/keyring1'
+import Keyring from '@core/background/keyring'
 import { entropyToSerialized } from '@shared/utils/bip39'
 
 import type { Message } from '@core/shared/messaging/messages'

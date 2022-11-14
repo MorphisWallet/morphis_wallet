@@ -3,7 +3,7 @@
 
 import { BehaviorSubject, filter, map, take } from 'rxjs'
 
-import Keyring from '@core/background/keyring1'
+import Keyring from '@core/background/keyring'
 import { MSG_DISABLE_AUTO_RECONNECT } from '@core/content-script/keep-bg-alive'
 
 import type { Runtime } from 'webextension-polyfill'
