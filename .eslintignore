@@ -1,4 +1,6 @@
-dist
-node_modules
-coverage
-pnpm-lock.yaml
+dist/
+node_modules/
+.next/
+.swc/
+out/
+font-icons/output/

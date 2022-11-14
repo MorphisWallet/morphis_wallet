@@ -1,4 +1,10 @@
-dist
-node_modules
-coverage
-pnpm-lock.yaml
+dist/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.next/
+.swc/
+out/
+font-icons/output/
+CHANGELOG.md

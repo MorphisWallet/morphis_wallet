@@ -1,0 +1,97 @@
+@use '_values/colors';
+@use '_utils';
+
+.container {
+    display: flex;
+    font-family: satoshi, Arial, Helvetica, sans-serif;
+    flex-flow: row nowrap;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: inherit;
+
+    &[disabled],
+    &.disabled {
+        opacity: 0.5;
+        cursor: initial;
+    }
+
+    &.neutral {
+        background: colors.$gray-45;
+        color: colors.$gray-90;
+    }
+
+    &.outline {
+        background: none;
+        color: colors.$cta-blue;
+        border: 1px solid colors.$sui-steel-blue;
+        border-radius: 12px;
+    }
+
+    &.secondary {
+        background: #fff;
+        color: #000;
+        border: 1px solid #000;
+        border-radius: 20px;
+        transition: background 0.1s ease-in-out;
+
+        &:hover {
+            background: #e3e3e4;
+        }
+
+        &[disabled],
+        &.disabled {
+            background: #c4c4c4;
+
+            i {
+                color: #c4c4c4;
+            }
+        }
+    }
+
+    &.primary {
+        background: #000;
+        border-radius: 20px;
+        color: colors.$white;
+        transition: background 0.1s ease-in-out;
+
+        &:hover {
+            background: #2a2a2d;
+        }
+
+        &[disabled],
+        &.disabled {
+            background: #c4c4c4;
+
+            i {
+                color: colors.$white;
+            }
+        }
+    }
+
+    &.mini {
+        padding: 4px 8px;
+        border-radius: 20px;
+
+        @include utils.typography('Primary/CAPTIONSMALL-SB');
+    }
+
+    &.small {
+        font-weight: 500;
+        font-size: 13px;
+        padding: 4px 8px;
+        border-radius: 14px;
+    }
+
+    &.large {
+        border-radius: 20px;
+        font-weight: 500;
+        height: 42px;
+    }
+}

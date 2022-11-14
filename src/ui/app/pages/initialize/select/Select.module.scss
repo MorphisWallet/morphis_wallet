@@ -1,0 +1,34 @@
+@use '_values/colors';
+@use '_values';
+@use '_utils';
+@use 'sass:color';
+
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    font-weight: 500;
+    align-items: center;
+    justify-content: center;
+    padding: 0 40px;
+    max-width: values.$sizing-popup-width;
+}
+
+.logo {
+    align-self: flex-start;
+    margin-bottom: 24px;
+}
+
+.logo-text {
+    align-self: flex-start;
+    font-size: 36px;
+    line-height: 48px;
+    margin-bottom: 12px;
+}
+
+.desc {
+    align-self: flex-start;
+    color: #929294;
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+}
