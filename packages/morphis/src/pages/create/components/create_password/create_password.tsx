@@ -9,8 +9,7 @@ import Link from '@mui/material/Link'
 import { Button } from '@components/button'
 import { Input } from '@components/input'
 
-import { createMnemonic } from '@core/slices/account'
-import { useAppDispatch } from '@core/hooks/useAppDispatch'
+// import { useAppDispatch } from '@core/hooks'
 
 import type { CreateStepProps } from '@pages/create/types'
 
@@ -43,7 +42,7 @@ const SCHEMA = yup.object().shape({
 })
 
 export const CreatePassword = ({ onNext }: CreateStepProps) => {
-  const dispatch = useAppDispatch()
+  // const dispatch = useAppDispatch()
 
   const { values, touched, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -57,7 +56,7 @@ export const CreatePassword = ({ onNext }: CreateStepProps) => {
 
   async function onSubmit({ password }: CreatePasswordValues) {
     try {
-      await dispatch(createMnemonic({ password })).unwrap()
+      return
     } catch (err) {
       console.warn(err)
     }

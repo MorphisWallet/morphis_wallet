@@ -5,7 +5,21 @@ import App from './App'
 import ErrorBoundary from './ErrorBoundary'
 import { Loading } from '@components/loading'
 
-import initSentry from './sentry'
+import store from '@core/store'
+import { initAppType, initNetworkFromStorage } from '@core/slices/app'
+import { getFromLocationSearch } from '@core/slices/app/AppType'
+import { thunkExtras } from '@core/store/thunk-extras'
+
+import initSentry from '@shared/sentry'
+
+async function init() {
+  if (import.meta.env.DEV) {
+    Object.defineProperty(window, 'store', { value: store })
+  }
+  store.dispatch(initAppType(getFromLocationSearch(window.location.search)))
+  await store.dispatch(initNetworkFromStorage()).unwrap()
+  await thunkExtras.background.init(store.dispatch)
+}
 
 const renderApp = () => {
   const rootDom = document.getElementById('root')
@@ -17,7 +31,7 @@ const renderApp = () => {
   root.render(
     <StrictMode>
       <ErrorBoundary>
-        <Suspense fallback={<Loading />}>
+        <Suspense fallback={<Loading loading />}>
           <App />
         </Suspense>
       </ErrorBoundary>
@@ -26,6 +40,7 @@ const renderApp = () => {
 }
 
 ;(async () => {
+  await init()
   initSentry()
   renderApp()
 })()

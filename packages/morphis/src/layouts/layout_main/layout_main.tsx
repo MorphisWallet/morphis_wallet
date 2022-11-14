@@ -1,38 +1,46 @@
-import type { ReactNode } from 'react'
+// Copyright (c) Mysten Labs, Inc.
+// SPDX-License-Identifier: Apache-2.0
+
 import cl from 'classnames'
 
-import { BottomMenu, BottomMenuKeys } from '@components/bottom_menu'
-import { Logo } from '@components/logo'
+import { Loading } from '@components/loading'
+import { useAppSelector, useFullscreenGuard } from '@core/hooks'
+import { getNavIsVisible } from '@core/slices/app'
+
+import type { ReactNode } from 'react'
 
 import st from './layout_main.module.less'
 
-type LayoutMainProps = {
+export type LayoutMainProps = {
+  limitToPopUpSize?: boolean
+  forceFullscreen?: boolean
   children: ReactNode | ReactNode[]
-  showBottomMenu?: boolean
   className?: string
-  activeMenu: BottomMenuKeys
 }
 
 export const LayoutMain = ({
-  className,
+  limitToPopUpSize = false,
+  forceFullscreen = false,
   children,
-  showBottomMenu,
-  activeMenu,
+  className,
 }: LayoutMainProps) => {
+  const guardLoading = useFullscreenGuard(forceFullscreen)
+  const isNavVisible = useAppSelector(getNavIsVisible)
+
   return (
-    <div className={cl([st.layout, className])}>
-      <header className={st.header}>
-        <Logo className={st.logo} height={24} width={24} />
-        <div className={st.account}>
-          <span>test_account</span>
-          <span className={st.address}>(0x12348888888eeee)</span>
-        </div>
-        <div className={st.env}>
-          <span className={st.envText}>Devnet</span>
-        </div>
-      </header>
-      {children}
-      {showBottomMenu && <BottomMenu activeMenu={activeMenu} />}
-    </div>
+    <Loading loading={guardLoading}>
+      <div
+        className={cl(
+          st.container,
+          className,
+          limitToPopUpSize ? st.forcedPopupSize : st.dynamicSize,
+          {
+            [st.navHidden]: !isNavVisible,
+          }
+        )}
+      >
+        {children}
+      </div>
+    </Loading>
   )
 }

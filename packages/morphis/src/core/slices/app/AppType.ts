@@ -7,8 +7,8 @@ export enum AppType {
   popup,
 }
 
-export function getFromLocationSearch() {
-  if (/type=popup/.test(window.location.search)) {
+export function getFromLocationSearch(search: string) {
+  if (/type=popup/.test(search)) {
     return AppType.popup
   }
   return AppType.fullscreen

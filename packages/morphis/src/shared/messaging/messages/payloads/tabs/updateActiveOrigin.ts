@@ -1,18 +1,18 @@
 // Copyright (c) Mysten Labs, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-import { isBasePayload } from '_payloads';
+import { isBasePayload } from '@shared/messaging/messages/payloads'
 
-import type { BasePayload, Payload } from '_payloads';
+import type { BasePayload, Payload } from '@shared/messaging/messages/payloads'
 
 export interface UpdateActiveOrigin extends BasePayload {
-    type: 'update-active-origin';
-    origin: string | null;
-    favIcon: string | null;
+  type: 'update-active-origin'
+  origin: string | null
+  favIcon: string | null
 }
 
 export function isUpdateActiveOrigin(
-    payload: Payload
+  payload: Payload
 ): payload is UpdateActiveOrigin {
-    return isBasePayload(payload) && payload.type === 'update-active-origin';
+  return isBasePayload(payload) && payload.type === 'update-active-origin'
 }

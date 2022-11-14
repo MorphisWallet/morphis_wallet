@@ -1,25 +1,25 @@
 // Copyright (c) Mysten Labs, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-import { isBasePayload } from '_payloads';
+import { isBasePayload } from '@shared/messaging/messages/payloads'
 
-import type { MoveCallTransaction, SignableTransaction } from '@mysten/sui.js';
-import type { BasePayload, Payload } from '_payloads';
+import type { MoveCallTransaction, SignableTransaction } from '@mysten/sui.js'
+import type { BasePayload, Payload } from '@shared/messaging/messages/payloads'
 
 export type TransactionDataType =
-    | { type: 'v2'; data: SignableTransaction }
-    | { type: 'move-call'; data: MoveCallTransaction }
-    | { type: 'serialized-move-call'; data: string };
+  | { type: 'v2'; data: SignableTransaction }
+  | { type: 'move-call'; data: MoveCallTransaction }
+  | { type: 'serialized-move-call'; data: string }
 
 export interface ExecuteTransactionRequest extends BasePayload {
-    type: 'execute-transaction-request';
-    transaction: TransactionDataType;
+  type: 'execute-transaction-request'
+  transaction: TransactionDataType
 }
 
 export function isExecuteTransactionRequest(
-    payload: Payload
+  payload: Payload
 ): payload is ExecuteTransactionRequest {
-    return (
-        isBasePayload(payload) && payload.type === 'execute-transaction-request'
-    );
+  return (
+    isBasePayload(payload) && payload.type === 'execute-transaction-request'
+  )
 }

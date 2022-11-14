@@ -1,45 +1,32 @@
 import { createBrowserRouter } from 'react-router-dom'
 
-import { Welcome } from '@pages/welcome'
-import { Create } from '@pages/create'
-import { Done } from '@pages/create/pages/done'
-import { Unlock } from '@pages/unlock'
-import { Landing } from '@pages/landing'
+import { Home } from '@pages/home'
+import { Locked } from '@pages/locked'
+import { Initialize } from '@pages/initialize'
 import { NFT } from '@pages/nft'
 import { History } from '@pages/history'
-import { Settings } from '@pages/settings'
 
 export default createBrowserRouter([
   {
-    path: '/',
-    element: <Welcome />,
+    path: '/*',
+    element: <Home />,
+    children: [
+      {
+        path: 'nft',
+        element: <NFT />,
+      },
+      {
+        path: 'history',
+        element: <History />,
+      },
+    ],
   },
   {
-    path: 'create',
-    element: <Create />,
+    path: 'locked',
+    element: <Locked />,
   },
   {
-    path: 'create/done',
-    element: <Done />,
-  },
-  {
-    path: 'unlock',
-    element: <Unlock />,
-  },
-  {
-    path: 'landing',
-    element: <Landing />,
-  },
-  {
-    path: 'nft',
-    element: <NFT />,
-  },
-  {
-    path: 'history',
-    element: <History />,
-  },
-  {
-    path: 'settings',
-    element: <Settings />,
+    path: '/initialize',
+    element: <Initialize />,
   },
 ])

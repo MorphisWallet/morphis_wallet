@@ -1,20 +1,19 @@
 // Copyright (c) Mysten Labs, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-import { isBasePayload } from '_payloads';
+import { isBasePayload } from '@shared/messaging/messages/payloads'
 
-import type { BasePayload, Payload } from '_payloads';
+import type { BasePayload, Payload } from '@shared/messaging/messages/payloads'
 
 export interface AcquirePermissionsResponse extends BasePayload {
-    type: 'acquire-permissions-response';
-    result: boolean;
+  type: 'acquire-permissions-response'
+  result: boolean
 }
 
 export function isAcquirePermissionsResponse(
-    payload: Payload
+  payload: Payload
 ): payload is AcquirePermissionsResponse {
-    return (
-        isBasePayload(payload) &&
-        payload.type === 'acquire-permissions-response'
-    );
+  return (
+    isBasePayload(payload) && payload.type === 'acquire-permissions-response'
+  )
 }
