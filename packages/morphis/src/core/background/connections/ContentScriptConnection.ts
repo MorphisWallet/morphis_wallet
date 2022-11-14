@@ -2,27 +2,27 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import { Connection } from './Connection'
-import { createMessage } from '@core/shared/messaging/messages'
-import { isGetAccount } from '@core/shared/messaging/messages/payloads/account/GetAccount'
+import { createMessage } from '@shared/messaging/messages'
+import { isGetAccount } from '@shared/messaging/messages/payloads/account/GetAccount'
 import {
   isAcquirePermissionsRequest,
   isHasPermissionRequest,
-} from '@core/shared/messaging/messages/payloads/permissions'
-import { isExecuteTransactionRequest } from '@core/shared/messaging/messages/payloads/transactions'
+} from '@shared/messaging/messages/payloads/permissions'
+import { isExecuteTransactionRequest } from '@shared/messaging/messages/payloads/transactions'
 import Permissions from '@core/background/Permissions'
 import Transactions from '@core/background/Transactions'
 
 import type { SuiAddress } from '@mysten/sui.js'
-import type { Message } from '@core/shared/messaging/messages'
-import type { PortChannelName } from '@core/shared/messaging/PortChannelName'
-import type { ErrorPayload } from '@core/shared/messaging/messages/payloads'
-import type { GetAccountResponse } from '@core/shared/messaging/messages/payloads/account/GetAccountResponse'
+import type { Message } from '@shared/messaging/messages'
+import type { PortChannelName } from '@shared/messaging/PortChannelName'
+import type { ErrorPayload } from '@shared/messaging/messages/payloads'
+import type { GetAccountResponse } from '@shared/messaging/messages/payloads/account/GetAccountResponse'
 import type {
   HasPermissionsResponse,
   AcquirePermissionsResponse,
   Permission,
-} from '@core/shared/messaging/messages/payloads/permissions'
-import type { ExecuteTransactionResponse } from '@core/shared/messaging/messages/payloads/transactions'
+} from '@shared/messaging/messages/payloads/permissions'
+import type { ExecuteTransactionResponse } from '@shared/messaging/messages/payloads/transactions'
 import type { Runtime } from 'webextension-polyfill'
 
 export class ContentScriptConnection extends Connection {

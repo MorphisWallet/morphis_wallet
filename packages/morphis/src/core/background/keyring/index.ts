@@ -7,8 +7,8 @@ import throttle from 'lodash/throttle'
 import Browser from 'webextension-polyfill'
 
 import { VaultStorage } from './VaultStorage'
-import { createMessage } from '@core/shared/messaging/messages'
-import { isKeyringPayload } from '@core/shared/messaging/messages/payloads/keyring'
+import { createMessage } from '@shared/messaging/messages'
+import { isKeyringPayload } from '@shared/messaging/messages/payloads/keyring'
 import { entropyToSerialized } from '@shared/utils/bip39'
 import Alarms from '@core/background/Alarms'
 import {
@@ -18,9 +18,9 @@ import {
 } from '@shared/constants'
 
 import type { Keypair } from '@mysten/sui.js'
-import type { Message } from '@core/shared/messaging/messages'
-import type { ErrorPayload } from '@core/shared/messaging/messages/payloads'
-import type { KeyringPayload } from '@core/shared/messaging/messages/payloads/keyring'
+import type { Message } from '@shared/messaging/messages'
+import type { ErrorPayload } from '@shared/messaging/messages/payloads'
+import type { KeyringPayload } from '@shared/messaging/messages/payloads/keyring'
 import type { Connection } from '@core/background/connections/Connection'
 
 type KeyringEvents = {

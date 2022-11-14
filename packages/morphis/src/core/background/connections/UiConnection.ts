@@ -4,31 +4,31 @@
 import { BehaviorSubject, filter, switchMap, takeUntil } from 'rxjs'
 
 import { Connection } from './Connection'
-import { createMessage } from '@core/shared/messaging/messages'
-import { isBasePayload } from '@core/shared/messaging/messages/payloads'
+import { createMessage } from '@shared/messaging/messages'
+import { isBasePayload } from '@shared/messaging/messages/payloads'
 import {
   isGetPermissionRequests,
   isPermissionResponse,
-} from '@core/shared/messaging/messages/payloads/permissions'
-import { isDisconnectApp } from '@core/shared/messaging/messages/payloads/permissions/DisconnectApp'
-import { isGetTransactionRequests } from '@core/shared/messaging/messages/payloads/transactions/ui/GetTransactionRequests'
-import { isTransactionRequestResponse } from '@core/shared/messaging/messages/payloads/transactions/ui/TransactionRequestResponse'
+} from '@shared/messaging/messages/payloads/permissions'
+import { isDisconnectApp } from '@shared/messaging/messages/payloads/permissions/DisconnectApp'
+import { isGetTransactionRequests } from '@shared/messaging/messages/payloads/transactions/ui/GetTransactionRequests'
+import { isTransactionRequestResponse } from '@shared/messaging/messages/payloads/transactions/ui/TransactionRequestResponse'
 import Permissions from '@core/background/Permissions'
 import Tabs from '@core/background/Tabs'
 import Transactions from '@core/background/Transactions'
 import Keyring from '@core/background/keyring'
 import { entropyToSerialized } from '@shared/utils/bip39'
 
-import type { Message } from '@core/shared/messaging/messages'
-import type { PortChannelName } from '@core/shared/messaging/PortChannelName'
-import type { KeyringPayload } from '@core/shared/messaging/messages/payloads/keyring'
+import type { Message } from '@shared/messaging/messages'
+import type { PortChannelName } from '@shared/messaging/PortChannelName'
+import type { KeyringPayload } from '@shared/messaging/messages/payloads/keyring'
 import type {
   Permission,
   PermissionRequests,
-} from '@core/shared/messaging/messages/payloads/permissions'
-import type { UpdateActiveOrigin } from '@core/shared/messaging/messages/payloads/tabs/updateActiveOrigin'
-import type { TransactionRequest } from '@core/shared/messaging/messages/payloads/transactions'
-import type { GetTransactionRequestsResponse } from '@core/shared/messaging/messages/payloads/transactions/ui/GetTransactionRequestsResponse'
+} from '@shared/messaging/messages/payloads/permissions'
+import type { UpdateActiveOrigin } from '@shared/messaging/messages/payloads/tabs/updateActiveOrigin'
+import type { TransactionRequest } from '@shared/messaging/messages/payloads/transactions'
+import type { GetTransactionRequestsResponse } from '@shared/messaging/messages/payloads/transactions/ui/GetTransactionRequestsResponse'
 import type { Runtime } from 'webextension-polyfill'
 
 export class UiConnection extends Connection {

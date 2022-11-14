@@ -3,9 +3,9 @@
 
 import { map, take } from 'rxjs'
 
-import { PortStream } from '@core/shared/messaging/PortStream'
+import { PortStream } from '@shared/messaging/PortStream'
 
-import type { Message } from '@core/shared/messaging/messages'
+import type { Message } from '@shared/messaging/messages'
 import type { Runtime } from 'webextension-polyfill'
 
 export abstract class Connection {

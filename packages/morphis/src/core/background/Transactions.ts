@@ -7,9 +7,9 @@ import Browser from 'webextension-polyfill'
 
 import { Window } from './Window'
 
-import type { TransactionDataType } from '@core/shared/messaging/messages/payloads/transactions/ExecuteTransactionRequest'
-import type { TransactionRequest } from '@core/shared/messaging/messages/payloads/transactions'
-import type { TransactionRequestResponse } from '@core/shared/messaging/messages/payloads/transactions/ui/TransactionRequestResponse'
+import type { TransactionDataType } from '@shared/messaging/messages/payloads/transactions/ExecuteTransactionRequest'
+import type { TransactionRequest } from '@shared/messaging/messages/payloads/transactions'
+import type { TransactionRequestResponse } from '@shared/messaging/messages/payloads/transactions/ui/TransactionRequestResponse'
 import type { ContentScriptConnection } from '@core/background/connections/ContentScriptConnection'
 
 const TX_STORE_KEY = 'transactions'

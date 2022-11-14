@@ -3,10 +3,10 @@
 
 import { take } from 'rxjs'
 
-import { PortStream } from '@core/shared/messaging/PortStream'
-import { WindowMessageStream } from '@core/shared/messaging/WindowMessageStream'
+import { PortStream } from '@shared/messaging/PortStream'
+import { WindowMessageStream } from '@shared/messaging/WindowMessageStream'
 
-import type { Message } from '@core/shared/messaging/messages'
+import type { Message } from '@shared/messaging/messages'
 
 function createPort(
   windowMsgStream: WindowMessageStream,

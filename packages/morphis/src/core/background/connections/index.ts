@@ -9,7 +9,7 @@ import { UiConnection } from './UiConnection'
 import { KEEP_ALIVE_BG_PORT_NAME } from '@core/content-script/keep-bg-alive'
 
 import type { Connection } from './Connection'
-import type { Permission } from '@core/shared/messaging/messages/payloads/permissions'
+import type { Permission } from '@shared/messaging/messages/payloads/permissions'
 
 export class Connections {
   #connections: (Connection | KeepAliveConnection)[] = []

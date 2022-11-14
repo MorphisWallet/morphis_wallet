@@ -18,14 +18,14 @@ import { Window } from './Window'
 import {
   ALL_PERMISSION_TYPES,
   isValidPermissionTypes,
-} from '@core/shared/messaging/messages/payloads/permissions'
+} from '@shared/messaging/messages/payloads/permissions'
 
 import type { ContentScriptConnection } from './connections/ContentScriptConnection'
 import type {
   Permission,
   PermissionResponse,
   PermissionType,
-} from '@core/shared/messaging/messages/payloads/permissions'
+} from '@shared/messaging/messages/payloads/permissions'
 import type { Observable } from 'rxjs'
 
 const PERMISSIONS_STORAGE_KEY = 'permissions'

@@ -1,18 +1,28 @@
+// Copyright (c) Mysten Labs, Inc.
+// SPDX-License-Identifier: Apache-2.0
+
 import { configureStore } from '@reduxjs/toolkit'
 
-import rootReducer from './root_reducer'
-import { thunkExtras } from './thunk_extras'
+import { KeypairVaultMiddleware } from './middlewares/KeypairVaultMiddleware'
+import { NetworkSwitchMiddleware } from './middlewares/NetworkSwitchMiddleware'
+import { SentryMiddleware } from './middlewares/SentryMiddleware'
+import { thunkExtras } from './thunk-extras'
+import rootReducer from '@core/store/RootReducer'
 
-export const store = configureStore({
+const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       thunk: {
         extraArgument: thunkExtras,
       },
-    }),
+    }).concat(
+      KeypairVaultMiddleware,
+      NetworkSwitchMiddleware,
+      SentryMiddleware
+    ),
 })
 
-export type RootState = ReturnType<typeof store.getState>
+export default store
 
 export type AppDispatch = typeof store.dispatch

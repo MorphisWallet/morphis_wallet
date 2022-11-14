@@ -9,6 +9,9 @@ import Link from '@mui/material/Link'
 import { Button } from '@components/button'
 import { Input } from '@components/input'
 
+import { createMnemonic } from '@core/slices/account'
+import { useAppDispatch } from '@core/hooks/useAppDispatch'
+
 import type { CreateStepProps } from '@pages/create/types'
 
 import commonSt from '../../create.module.less'
@@ -16,23 +19,32 @@ import st from './create_password.module.less'
 
 const PASSWORD_MIN_LENGTH = 8
 
+type CreatePasswordValues = {
+  password: string
+  confirmPassword: string
+  agreeTOS: boolean
+}
+
 const SCHEMA = yup.object().shape({
-  password: yup.string()
+  password: yup
+    .string()
     .required('This field is required')
     .min(PASSWORD_MIN_LENGTH),
   confirmPassword: yup.string().when('password', {
     is: (val: string | undefined) => (val && val.length > 0 ? true : false),
-    then: yup.string().oneOf(
-      [yup.ref('password')],
-      'Both passwords need to be the same'
-    ),
+    then: yup
+      .string()
+      .oneOf([yup.ref('password')], 'Both passwords need to be the same'),
   }),
-  agreeTOS: yup.bool()
+  agreeTOS: yup
+    .bool()
     .required()
     .oneOf([true], 'The Terms of Service must be accepted'),
 })
 
 export const CreatePassword = ({ onNext }: CreateStepProps) => {
+  const dispatch = useAppDispatch()
+
   const { values, touched, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
       password: '',
@@ -40,10 +52,16 @@ export const CreatePassword = ({ onNext }: CreateStepProps) => {
       agreeTOS: false,
     },
     validationSchema: SCHEMA,
-    onSubmit: () => {
-      onNext()
-    },
+    onSubmit,
   })
+
+  async function onSubmit({ password }: CreatePasswordValues) {
+    try {
+      await dispatch(createMnemonic({ password })).unwrap()
+    } catch (err) {
+      console.warn(err)
+    }
+  }
 
   return (
     <FormGroup sx={{ flexGrow: '1', width: '100%' }}>

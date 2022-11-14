@@ -3,27 +3,27 @@
 
 import { lastValueFrom, map, take } from 'rxjs'
 
-import { createMessage } from '@core/shared/messaging/messages'
-import { PortStream } from '@core/shared/messaging/PortStream'
-import { isKeyringPayload } from '@core/shared/messaging/messages/payloads/keyring'
-import { isPermissionRequests } from '@core/shared/messaging/messages/payloads/permissions'
-import { isUpdateActiveOrigin } from '@core/shared/messaging/messages/payloads/tabs/updateActiveOrigin'
-import { isGetTransactionRequestsResponse } from '@core/shared/messaging/messages/payloads/transactions/ui/GetTransactionRequestsResponse'
+import { createMessage } from '@shared/messaging/messages'
+import { PortStream } from '@shared/messaging/PortStream'
+import { isKeyringPayload } from '@shared/messaging/messages/payloads/keyring'
+import { isPermissionRequests } from '@shared/messaging/messages/payloads/permissions'
+import { isUpdateActiveOrigin } from '@shared/messaging/messages/payloads/tabs/updateActiveOrigin'
+import { isGetTransactionRequestsResponse } from '@shared/messaging/messages/payloads/transactions/ui/GetTransactionRequestsResponse'
 import { setKeyringStatus } from '@core/slices/account'
 import { setActiveOrigin } from '@core/slices/app'
 import { setPermissions } from '@core/slices/permissions'
 import { setTransactionRequests } from '@core/slices/transaction-requests'
 
 import type { SuiAddress, SuiTransactionResponse } from '@mysten/sui.js'
-import type { Message } from '@core/shared/messaging/messages'
-import type { KeyringPayload } from '@core/shared/messaging/messages/payloads/keyring'
+import type { Message } from '@shared/messaging/messages'
+import type { KeyringPayload } from '@shared/messaging/messages/payloads/keyring'
 import type {
   GetPermissionRequests,
   PermissionResponse,
-} from '@core/shared/messaging/messages/payloads/permissions'
-import type { DisconnectApp } from '@core/shared/messaging/messages/payloads/permissions/DisconnectApp'
-import type { GetTransactionRequests } from '@core/shared/messaging/messages/payloads/transactions/ui/GetTransactionRequests'
-import type { TransactionRequestResponse } from '@core/shared/messaging/messages/payloads/transactions/ui/TransactionRequestResponse'
+} from '@shared/messaging/messages/payloads/permissions'
+import type { DisconnectApp } from '@shared/messaging/messages/payloads/permissions/DisconnectApp'
+import type { GetTransactionRequests } from '@shared/messaging/messages/payloads/transactions/ui/GetTransactionRequests'
+import type { TransactionRequestResponse } from '@shared/messaging/messages/payloads/transactions/ui/TransactionRequestResponse'
 import type { AppDispatch } from '@core/store'
 
 /**
