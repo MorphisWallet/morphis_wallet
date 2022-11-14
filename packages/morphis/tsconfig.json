@@ -5,11 +5,12 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@components/*": ["./src/components/*"],
       "@assets/*": ["./src/assets/*"],
-      "@pages/*": ["./src/pages/*"],
+      "@components/*": ["./src/components/*"],
+      "@core/*": ["./src/core/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@core/*": ["./src/core/*"]
+      "@pages/*": ["./src/pages/*"],
+      "@shared/*": ["./src/shared/*"]
     }
   },
   "include": ["src"],

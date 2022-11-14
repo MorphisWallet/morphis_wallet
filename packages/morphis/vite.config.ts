@@ -8,11 +8,12 @@ import svgr from 'vite-plugin-svgr'
 export default defineConfig({
   resolve: {
     alias: {
-      '@components': resolve(__dirname, '/src/components'),
       '@assets': resolve(__dirname, '/src/assets'),
-      '@pages': resolve(__dirname, '/src/pages'),
-      '@layouts': resolve(__dirname, '/src/layouts'),
+      '@components': resolve(__dirname, '/src/components'),
       '@core': resolve(__dirname, '/src/core'),
+      '@layouts': resolve(__dirname, '/src/layouts'),
+      '@pages': resolve(__dirname, '/src/pages'),
+      '@shared': resolve(__dirname, '/src/shared'),
     },
   },
   plugins: [
