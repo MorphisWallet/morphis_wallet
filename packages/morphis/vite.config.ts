@@ -14,6 +14,7 @@ export default defineConfig({
       '@layouts': resolve(__dirname, '/src/layouts'),
       '@pages': resolve(__dirname, '/src/pages'),
       '@shared': resolve(__dirname, '/src/shared'),
+      '@src': resolve(__dirname, '/src'),
     },
   },
   plugins: [
