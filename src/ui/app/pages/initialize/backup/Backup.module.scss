@@ -1,63 +1,44 @@
 @use '_values/colors';
 @use '_utils';
+@use '_values';
+
+.container {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    max-width: values.$sizing-popup-width;
+    flex-grow: 1;
+    max-height: values.$sizing-popup-height;
+    width: 100%;
+    padding: 12px 40px 40px;
+}
 
 .mnemonic {
+    border: 1px solid #7e7e7e;
+    border-radius: 10px;
+    display: grid;
+    height: 148px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(4, minmax(0, 1fr));
+    margin-bottom: 12px;
+    padding: 0 14px;
+}
+
+.ph-wrapper {
+    align-items: center;
     display: flex;
-    flex-flow: column nowrap;
-    gap: 8px;
-    align-self: stretch;
-    font-weight: 600;
-    font-size: 17px;
-    line-height: 1.4;
-    padding: 14px;
-    border-radius: 15px;
-    background: colors.$white;
-    border: 1px solid #e9eaeb;
-    box-shadow: 0 1px 2px rgba(16 24 40 / 5%);
-    color: colors.$gray-75;
+    font-size: 13px;
+    flex-direction: row;
 }
 
-.copy {
-    margin-top: 10px;
-    color: colors.$sui-dark-blue;
-    align-self: flex-end;
-    cursor: pointer;
-    line-height: 1;
-
-    @include utils.typography('Primary/CAPTION-SB');
+.ph-index {
+    color: #c8c8c8;
+    flex-shrink: 0;
+    width: 24px;
 }
 
-.info {
-    text-align: center;
-    color: colors.$gray-75;
-    margin-top: 15px;
-    line-height: 1;
-
-    @include utils.typography('ParagraphPrimary/P2-R');
-}
-
-.info-caption {
-    text-align: center;
-    color: colors.$gray-75;
-    margin-bottom: 5px;
-
-    @include utils.typography('Primary/CAPTION-M');
-}
-
-.fill {
-    flex: 1;
-}
-
-.btn {
-    display: flex;
-    flex-flow: row nowrap;
-    margin-top: 16px;
-    align-self: stretch;
-    padding: 14px 20px;
-}
-
-.arrow-up {
-    font-size: 12px;
-    font-weight: 300;
-    transform: rotate(135deg);
+.ph {
+    overflow: hidden;
+    padding-right: 4px;
+    text-overflow: ellipsis;
 }

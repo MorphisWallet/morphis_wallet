@@ -90,10 +90,13 @@
         "webpack-merge": "^5.8.0"
     },
     "dependencies": {
+        "@emotion/react": "^11.10.5",
+        "@emotion/styled": "^11.10.5",
         "@floating-ui/react-dom-interactions": "^0.10.1",
         "@growthbook/growthbook": "^0.18.1",
         "@growthbook/growthbook-react": "^0.9.1",
         "@metamask/browser-passworder": "^3.0.0",
+        "@mui/material": "^5.10.13",
         "@mysten/sui.js": "^0.16.0",
         "@mysten/wallet-standard": "^0.2.1",
         "@noble/hashes": "^1.1.2",

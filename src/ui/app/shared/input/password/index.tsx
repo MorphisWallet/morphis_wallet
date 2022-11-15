@@ -7,7 +7,12 @@ import st from './PasswordInput.module.scss';
 
 export type PasswordInputProps = FieldProps;
 
-function PasswordInput({ field, meta, form, ...props }: PasswordInputProps) {
+function PasswordInput({
+    field,
+    meta,
+    form,
+    ...props
+}: PasswordInputProps & { placeholder?: string }) {
     return <input type="password" {...field} {...props} className={st.input} />;
 }
 

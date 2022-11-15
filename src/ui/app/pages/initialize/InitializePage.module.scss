@@ -1,3 +1,5 @@
+@use '_values';
+
 .container {
     display: flex;
     flex-flow: column nowrap;
@@ -5,4 +7,29 @@
     margin: 0 auto;
     justify-content: center;
     flex: 1;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    max-width: values.$sizing-popup-width;
+    flex-grow: 1;
+    max-height: values.$sizing-popup-height;
+    width: 100%;
+    padding: 12px 40px 40px;
+}
+
+.h2 {
+    align-self: flex-start;
+    font-size: 24px;
+    margin-bottom: 12px;
+    line-height: 32px;
+}
+
+.desc {
+    align-self: flex-start;
+    color: #929294;
+    font-size: 18px;
+    margin-bottom: 33px;
 }

@@ -2,13 +2,15 @@
 @use '_utils';
 @use '_values';
 
-.container {
+.common-container {
     display: flex;
     flex-direction: column;
     font-weight: 500;
     max-width: values.$sizing-popup-width;
     flex-grow: 1;
     max-height: values.$sizing-popup-height;
+    width: 100%;
+    padding: 12px 40px 40px;
 }
 
 .h2 {
@@ -56,8 +58,8 @@
             content: '';
             position: absolute;
             display: none;
-            left: 7px;
-            bottom: 5px;
+            left: 5px;
+            bottom: 2px;
             width: 3px;
             height: 10px;
             border: solid white;

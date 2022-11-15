@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 8px;
+    height: 32px;
+}
+
+.dot {
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    background-color: #d9d9d9;
+}
+
+.active {
+    background-color: #000;
+}
+
+.back {
+    position: absolute;
+    left: 0;
+    cursor: pointer;
+}

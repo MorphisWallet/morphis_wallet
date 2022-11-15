@@ -1,20 +1,21 @@
 // Copyright (c) Mysten Labs, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
+import Tooltip from '@mui/material/Tooltip';
+import cl from 'classnames';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Button from '_app/shared/button';
-import CardLayout from '_app/shared/card-layout';
 import { useLockedGuard } from '_app/wallet/hooks';
-import Alert from '_components/alert';
 import CopyToClipboard from '_components/copy-to-clipboard';
-import Icon, { SuiIcons } from '_components/icon';
 import Loading from '_components/loading';
 import { useAppDispatch } from '_hooks';
 import { loadEntropyFromKeyring } from '_redux/slices/account';
 import { entropyToMnemonic, toEntropy } from '_shared/utils/bip39';
+import InitializeStepperBar from '_src/ui/app/components/initialize-stepper-bar';
 
+import commonSt from '../InitializePage.module.scss';
 import st from './Backup.module.scss';
 
 export type BackupPageProps = {
@@ -22,12 +23,14 @@ export type BackupPageProps = {
 };
 
 const BackupPage = ({ mode = 'created' }: BackupPageProps) => {
+    const navigate = useNavigate();
+    const dispatch = useAppDispatch();
     const guardsLoading = useLockedGuard(false);
+
     const [loading, setLoading] = useState(true);
     const [mnemonic, setLocalMnemonic] = useState<string | null>(null);
     const [error, setError] = useState<string | null>(null);
-    const navigate = useNavigate();
-    const dispatch = useAppDispatch();
+
     useEffect(() => {
         (async () => {
             if (guardsLoading || mode !== 'created') {
@@ -52,57 +55,74 @@ const BackupPage = ({ mode = 'created' }: BackupPageProps) => {
             }
         })();
     }, [dispatch, mode, guardsLoading]);
+
     return (
         <Loading loading={guardsLoading}>
-            <CardLayout
-                icon="success"
-                title={`Wallet ${
-                    mode === 'imported' ? 'Imported' : 'Created'
-                } Successfully!`}
-                subtitle={mode === 'created' ? 'Recovery Phrase' : undefined}
-            >
+            <div className={commonSt['center-container']}>
+                <InitializeStepperBar
+                    currentIndex={1}
+                    className="mb-16"
+                    onBack={() => navigate('./create')}
+                />
+                <p className={commonSt.h2}>Write down your recovery phrase</p>
+                <p className={cl([commonSt.desc, 'mb-[30px]'])}>
+                    Make sure to store it&nbsp;
+                    <span className="font-bold">in a safe place</span>
+                </p>
                 {mode === 'created' ? (
                     <>
                         <Loading loading={loading}>
                             {mnemonic ? (
                                 <div className={st.mnemonic}>
-                                    {mnemonic}
-                                    <CopyToClipboard
-                                        txt={mnemonic}
-                                        className={st.copy}
-                                        mode="plain"
-                                    >
-                                        COPY
-                                    </CopyToClipboard>
+                                    {mnemonic.split(' ').map((ph, i) => (
+                                        <div
+                                            className={st['ph-wrapper']}
+                                            key={ph}
+                                        >
+                                            <span className={st['ph-index']}>
+                                                {`${i + 1}`.padStart(2, '0')}
+                                            </span>
+                                            <Tooltip
+                                                PopperProps={{
+                                                    modifiers: [
+                                                        {
+                                                            name: 'offset',
+                                                            options: {
+                                                                offset: [
+                                                                    0, -14,
+                                                                ],
+                                                            },
+                                                        },
+                                                    ],
+                                                }}
+                                                title={ph}
+                                            >
+                                                <span className={st.ph}>
+                                                    {ph}
+                                                </span>
+                                            </Tooltip>
+                                        </div>
+                                    ))}
                                 </div>
                             ) : (
-                                <Alert>{error}</Alert>
+                                <span>{error}</span>
                             )}
                         </Loading>
-                        <div className={st.info}>
-                            Your recovery phrase makes it easy to back up and
-                            restore your account.
-                        </div>
-                        <div className={st.info}>
-                            <div className={st.infoCaption}>WARNING</div>
-                            Never disclose your secret recovery phrase. Anyone
-                            with the passphrase can take over your account
-                            forever.
-                        </div>
                     </>
                 ) : null}
+                <CopyToClipboard txt={mnemonic || ''} mode="plain">
+                    COPY
+                </CopyToClipboard>
                 <div className={st.fill} />
                 <Button
                     type="button"
-                    className={st.btn}
                     size="large"
                     mode="primary"
                     onClick={() => navigate('/')}
                 >
-                    Open Sui Wallet
-                    <Icon icon={SuiIcons.ArrowLeft} className={st.arrowUp} />
+                    I saved my recovery phrase
                 </Button>
-            </CardLayout>
+            </div>
         </Loading>
     );
 };

@@ -12,7 +12,9 @@ import { useAppDispatch } from '_hooks';
 import PasswordFields from '_pages/initialize/shared/password-fields';
 import { createVault } from '_redux/slices/account';
 import { ToS_LINK } from '_shared/constants';
+import InitializeStepperBar from '_src/ui/app/components/initialize-stepper-bar';
 
+import commonSt from '../InitializePage.module.scss';
 import st from './Create.module.scss';
 
 const CreatePage = () => {
@@ -20,9 +22,16 @@ const CreatePage = () => {
     const navigate = useNavigate();
 
     return (
-        <div className={st.container}>
-            <p className={st.h2}>Create a password</p>
-            <p className={st.desc}>We will use this to unlock your wallet</p>
+        <div className={commonSt['center-container']}>
+            <InitializeStepperBar
+                currentIndex={0}
+                className="mb-16"
+                onBack={() => navigate('./create')}
+            />
+            <p className={commonSt.h2}>Create a password</p>
+            <p className={commonSt.desc}>
+                We will use this to unlock your wallet
+            </p>
             <Formik
                 initialValues={{
                     terms: false,
