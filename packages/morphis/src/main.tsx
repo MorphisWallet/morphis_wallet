@@ -7,6 +7,8 @@ import { Loading } from '@components/loading'
 
 import initSentry from './sentry'
 
+import './index.css'
+
 const renderApp = () => {
   const rootDom = document.getElementById('root')
   if (!rootDom) {
