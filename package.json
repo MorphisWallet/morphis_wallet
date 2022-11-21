@@ -1,42 +1,46 @@
 {
-  "name": "morphis",
+  "name": "@morphiswallet",
   "version": "1.0.0",
   "description": "",
   "packageManager": "^pnpm@7.14.0",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "configs/*"
   ],
   "scripts": {
     "prepare": "husky install",
-    "morphis:dev": "pnpm --filter @morphis/morphis dev",
-    "morphis:build": "pnpm --filter @morphis/morphis build",
-    "morphis:preview": "pnpm --filter @morphis/morphis preview",
-    "morphis:test": "pnpm --filter @morphis/morphis test",
-    "lint": "npx eslint --ext .js,.jsx,.ts,.tsx ."
+    "lint": "npx eslint packages --ext .js,.jsx,.ts,.tsx"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChiuMungZitAlexander/morphis_wallet.git"
+    "url": "git@github.com:MorphisWallet/morphis_wallet.git"
   },
   "keywords": [
     "morphis",
     "wallet",
     "sui"
   ],
-  "author": "Alexander Zhao",
+  "author": "Morphis Lab<morphiswallet@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ChiuMungZitAlexander/morphis_wallet/issues"
-  },
-  "homepage": "https://github.com/ChiuMungZitAlexander/morphis_wallet#readme",
+  "homepage": "https://github.com/MorphisWallet/morphis_wallet",
   "devDependencies": {
     "@commitlint/cli": "^17.2.0",
     "@commitlint/config-conventional": "^17.2.0",
-    "@morphis/eslint-config": "workspace:*",
-    "eslint": "^8.26.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.42.0",
+    "@typescript-eslint/parser": "^5.42.0",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-define-config": "^1.11.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsonc": "^2.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.10",
     "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "typescript": "^4.8.4"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx,md,json}": "eslint"
