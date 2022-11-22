@@ -6,20 +6,11 @@
 // import theme from './theme'
 // import router from './router'
 
-import { Button } from '@components/button'
+import { Input } from '@components/input'
 
 const App = () => (
   <main>
-    <Button>qwerqwer12341234sa fdsalkfjio3qur i9237i9r 7123098 r4732</Button>
-    <Button disabled className='mb-4'>
-      qwerqwer12341234sa fdsalkfjio3qur i9237i9r 7123098 r4732
-    </Button>
-    <Button variant="outlined">
-      qwerqwer12341234sa fdsalkfjio3qur i9237i9r 7123098 r4732
-    </Button>
-    <Button variant="outlined" disabled>
-      qwerqwer12341234sa fdsalkfjio3qur i9237i9r 7123098 r4732
-    </Button>
+    <Input placeholder="Password" type="password" className="my-2" />
   </main>
 )
 

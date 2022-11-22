@@ -16,17 +16,15 @@ export const Button = ({
   className,
   variant = 'contained',
   ...rest
-}: ButtonProps) => {
-  return (
-    <button
-      className={cl([
-        'w-full h-[42px] rounded-[20px] px-4 font-medium truncate transition duration-100 ease-linear disabled:cursor-not-allowed',
-        VARIANT_STYLES[variant],
-        className,
-      ])}
-      {...rest}
-    >
-      {children}
-    </button>
-  )
-}
+}: ButtonProps) => (
+  <button
+    className={cl([
+      'w-full h-[42px] rounded-[20px] px-4 font-medium truncate transition duration-100 ease-linear disabled:cursor-not-allowed',
+      VARIANT_STYLES[variant],
+      className,
+    ])}
+    {...rest}
+  >
+    {children}
+  </button>
+)
