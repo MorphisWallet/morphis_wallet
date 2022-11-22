@@ -8,7 +8,7 @@ import ErrorBoundary from './ErrorBoundary'
 import { store } from './store'
 import { setAppType } from './store/slices/app'
 
-import initSentry from './sentry'
+import initSentry from './shared/sentry'
 
 import { getFromLocationSearch } from './utils/location'
 

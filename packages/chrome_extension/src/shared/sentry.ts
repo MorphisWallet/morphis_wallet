@@ -1,7 +1,7 @@
 import * as Sentry from '@sentry/react'
 import { BrowserTracing } from '@sentry/tracing'
 
-import packageJson from '../package.json'
+import packageJson from '../../package.json'
 
 const WALLET_VERSION = JSON.stringify(packageJson.version)
 const IS_PROD = import.meta.env.PROD
