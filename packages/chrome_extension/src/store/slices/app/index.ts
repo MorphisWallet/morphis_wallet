@@ -32,7 +32,7 @@ const slice = createSlice({
   name: 'app',
   initialState,
   reducers: {
-    initAppType: (state, { payload }: PayloadAction<AppType>) => {
+    setAppType: (state, { payload }: PayloadAction<AppType>) => {
       state.appType = payload
     },
     // setApiEnv: (state, { payload }: PayloadAction<API_ENV>) => {
@@ -60,7 +60,7 @@ const slice = createSlice({
 })
 
 // app actions
-export const { initAppType, setNavVisibility } = slice.actions
+export const { setAppType, setNavVisibility } = slice.actions
 
 // app selectors
 export const getAppType = ({ app }: RootState) => app.appType

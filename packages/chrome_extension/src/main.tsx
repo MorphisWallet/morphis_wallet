@@ -3,12 +3,20 @@ import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 
 import App from './App'
-import { store } from './store'
 import ErrorBoundary from './ErrorBoundary'
+
+import { store } from './store'
+import { setAppType } from './store/slices/app'
 
 import initSentry from './sentry'
 
+import { getFromLocationSearch } from './utils/location'
+
 import './index.css'
+
+const init = () => {
+  store.dispatch(setAppType(getFromLocationSearch(window.location.search)))
+}
 
 const renderApp = () => {
   const rootDom = document.getElementById('root')
@@ -29,6 +37,7 @@ const renderApp = () => {
 }
 
 ;(async () => {
+  init()
   initSentry()
   renderApp()
 })()
