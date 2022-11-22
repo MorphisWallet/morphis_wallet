@@ -6,6 +6,6 @@
 // import theme from './theme'
 // import router from './router'
 
-const App = () => <div>App</div>
+const App = () => <main>App</main>
 
 export default App

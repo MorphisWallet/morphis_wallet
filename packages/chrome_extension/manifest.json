@@ -2,5 +2,6 @@
   "manifest_version": 3,
   "name": "Morphis Wallet",
   "version": "0.0.0.1",
+  "permissions": ["storage", "tabs", "alarms"],
   "action": { "default_popup": "index.html" }
 }
