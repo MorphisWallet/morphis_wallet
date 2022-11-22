@@ -6,6 +6,8 @@ importers:
     specifiers:
       '@commitlint/cli': ^17.2.0
       '@commitlint/config-conventional': ^17.2.0
+      '@morphiswallet/chromeextension': workspace:*
+      '@morphiswallet/core': workspace:*
       '@typescript-eslint/eslint-plugin': ^5.42.0
       '@typescript-eslint/parser': ^5.42.0
       eslint: ^8.26.0
@@ -20,6 +22,8 @@ importers:
       prettier: ^2.7.1
       typescript: ^4.8.4
     dependencies:
+      '@morphiswallet/chromeextension': link:packages/chrome_extension
+      '@morphiswallet/core': link:packages/core
       typescript: 4.8.4
     devDependencies:
       '@commitlint/cli': 17.2.0
@@ -131,6 +135,12 @@ importers:
       vite: 3.2.2_less@4.1.3
       vite-plugin-svgr: 2.2.2_vite@3.2.2
       vitest: 0.25.1_less@4.1.3
+
+  packages/core:
+    specifiers:
+      typescript: ^4.8.4
+    dependencies:
+      typescript: 4.8.4
 
 packages:
 

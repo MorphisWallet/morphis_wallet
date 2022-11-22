@@ -1,6 +1,6 @@
 {
   "name": "@morphiswallet/chromeextension",
-  "version": "0.0.0.1",
+  "version": "0.0.1",
   "description": "<img width=\"324\" alt=\"image\" src=\"https://user-images.githubusercontent.com/22234622/199186970-459a18ee-bf9a-4381-b763-b2ecd0017ce9.png\">",
   "type": "module",
   "engines": {

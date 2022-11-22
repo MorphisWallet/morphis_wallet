@@ -1,4 +1,4 @@
-import { StrictMode, Suspense } from 'react'
+import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import App from './App'
@@ -18,9 +18,7 @@ const renderApp = () => {
   root.render(
     <StrictMode>
       <ErrorBoundary>
-        <Suspense fallback={<div>loading</div>}>
-          <App />
-        </Suspense>
+        <App />
       </ErrorBoundary>
     </StrictMode>
   )

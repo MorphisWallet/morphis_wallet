@@ -6,12 +6,12 @@ import packageJson from '../package.json'
 const WALLET_VERSION = JSON.stringify(packageJson.version)
 const IS_PROD = import.meta.env.PROD
 
-export default function initSentry() {
+const initSentry = () => {
   if (!IS_PROD) {
     return
   }
-  const SENTRY_DSN = import.meta.env.VITE_SENTRY_DSN
 
+  const SENTRY_DSN = import.meta.env.VITE_SENTRY_DSN
   if (!SENTRY_DSN) {
     console.warn('No sentry dsn from environment variables')
     return
@@ -24,3 +24,5 @@ export default function initSentry() {
     tracesSampleRate: 1.0,
   })
 }
+
+export default initSentry

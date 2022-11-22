@@ -6,8 +6,6 @@
 // import theme from './theme'
 // import router from './router'
 
-import './App.less'
-
 const App = () => <div>App</div>
 
 export default App
